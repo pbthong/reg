@@ -4,7 +4,6 @@ import string
 import threading
 from bs4 import BeautifulSoup
 
-password = input("Nhập Pass: ")
 dem = 0
 
 lock = threading.Lock()
@@ -47,7 +46,7 @@ def huydev():
             random_chars = random.choices(string.ascii_letters + string.digits, k=10)
             user = f"{''.join(random_chars)}"
             mail = f"{user}@gmail.com"
-            pas = password
+            pas = f"phaconmemay"
             threading.Thread(target=huydev_user, args=(user, mail, pas)).start()
 
 huydev()
